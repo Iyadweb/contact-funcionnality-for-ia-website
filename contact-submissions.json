@@ -1,0 +1,42 @@
+[
+  {
+    "name": "noman",
+    "email": "nomen26096@izeao.com",
+    "company": "ilam",
+    "phone": "123456789",
+    "projectType": "automation",
+    "message": "hello",
+    "id": "1c6cd3cf-81cd-4dde-b295-a0c084e46433",
+    "submittedAt": "2025-11-26T12:39:19.760Z"
+  },
+  {
+    "name": "noman",
+    "email": "nomen26096@izeao.com",
+    "company": "ilam",
+    "phone": "123456789",
+    "projectType": "automation",
+    "message": "hello!",
+    "id": "91fb6700-204b-454c-bfa9-4c87a21de733",
+    "submittedAt": "2025-11-26T13:00:49.645Z"
+  },
+  {
+    "name": "Noman",
+    "email": "nomen26096@izeao.com",
+    "company": "ilam",
+    "phone": "123456789",
+    "projectType": "automation",
+    "message": "hello!",
+    "id": "4a0ca971-c568-4b94-9a99-ee26c40dd2e4",
+    "submittedAt": "2025-11-26T13:10:58.428Z"
+  },
+  {
+    "name": "noman",
+    "email": "nomen26096@izeao.com",
+    "company": "ilam",
+    "phone": "12345789",
+    "projectType": "automation",
+    "message": "Hello; I have skills that might interest you",
+    "id": "bae4fb67-d0f1-4297-995e-9535a47a2ac8",
+    "submittedAt": "2025-11-26T14:04:44.389Z"
+  }
+]

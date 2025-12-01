@@ -1,0 +1,92 @@
+<section class="form-card">
+  <form id="contact-form" novalidate>
+    <div class="form-header">
+      <h2>Share your roadmap</h2>
+      <p>All fields marked * are required.</p>
+    </div>
+
+    <!-- Input fields -->
+    <label>
+      Name*:
+      <input type="text" name="name" required>
+    </label><br>
+
+    <label>
+      Email*:
+      <input type="email" name="email" required>
+    </label><br>
+
+    <label>
+      Company:
+      <input type="text" name="company">
+    </label><br>
+
+    <label>
+      Phone:
+      <input type="tel" name="phone">
+    </label><br>
+
+    <label>
+      Project Type:
+      <select name="projectType">
+        <option value="">Select...</option>
+        <option value="web">Web Development</option>
+        <option value="qa">QA & Testing</option>
+        <option value="Ai search solutions">Ai search solution</option>
+      </select>
+    </label><br>
+
+    <label>
+      Message*:
+      <textarea name="message" required></textarea>
+    </label><br>
+
+    <!-- Actions -->
+    <div class="form-actions">
+      <button type="submit" class="primary">Send message</button>
+      <p class="muted">By submitting, you agree to our privacy policy.</p>
+    </div>
+
+    <!-- Status -->
+    <p id="form-status" role="status" aria-live="polite"></p>
+  </form>
+</section>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const status = document.getElementById('form-status');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const data = {
+      name: form.name.value,
+      email: form.email.value,
+      company: form.company.value,
+      phone: form.phone.value,
+      projectType: form.projectType.value,
+      message: form.message.value
+    };
+
+    try {
+      const res = await fetch('http://localhost:4000/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      const result = await res.json();
+      if (res.ok) {
+        status.textContent = result.message;
+        status.style.color = "green";
+        form.reset();
+      } else {
+        status.textContent = "Error: " + (result.errors || "Invalid submission");
+        status.style.color = "red";
+      }
+    } catch (err) {
+      status.textContent = "Server error. Please try again later.";
+      status.style.color = "red";
+    }
+  });
+</script>
